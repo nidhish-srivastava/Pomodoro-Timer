@@ -6,7 +6,7 @@ const TimerContext = createContext()
 export const useTimerHook = () => useContext(TimerContext)
 
 export const TimerContextProvider = ({children}) =>{
-  const [allData, setAllData] = useState(JSON.parse(localStorage.getItem("taskArray")) || [])
+  const [allData, setAllData] = useState([])
   const [taskId,setTaskId] = useState(0)
   const [taskIndex,setTaskIndex] = useState(0)
 

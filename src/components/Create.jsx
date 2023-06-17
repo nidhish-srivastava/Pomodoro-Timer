@@ -15,17 +15,10 @@ const Create = () => {
       }
       setAllData([...allData,newTask])
       setTask("")
+    };
+    
+   
 
-      window.localStorage.setItem("taskArray",JSON.stringify(allData))
-  };
-
-  // useEffect(()=>{
-
-  // },)
-
-
-
- 
 
   return (
     <div className="input-container">

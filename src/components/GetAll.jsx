@@ -19,7 +19,7 @@ const GetAll = () => {
       {allData.map((e, i) => {
         return (
           <div className="task-card" key={i}>
-            <div>
+            <div className="task">
                 {e.task}
             </div>
             <span className="open-icon" onClick={()=>getPostHandler(e.id,i)}>

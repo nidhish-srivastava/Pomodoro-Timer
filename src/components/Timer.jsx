@@ -10,9 +10,9 @@ function Timer() {
   const [toggleState, setToggleState] = useState(false);
   const [id, setId] = useState(null);
   const [btnText, setBtnText] = useState("Start");
-  const {allData} = useTimerHook()
-  const [timerOverMessage,setTimerOverMessage] = useState("")
-  const [taskAssignState,setTaskAssignState] = useState("")
+  const { allData } = useTimerHook();
+  const [timerOverMessage, setTimerOverMessage] = useState("");
+  const [taskAssignState, setTaskAssignState] = useState("");
 
   const startHandler = () => {
     const intervalId = setInterval(() => {
@@ -21,7 +21,7 @@ function Timer() {
     setToggleState((e) => !e);
     setBtnText("Pause");
     setId(intervalId);
-    setTaskAssignState(()=> `Task : ${allData[0].task}`)
+    setTaskAssignState(() => `Task : ${allData[0]?.task}`);
   };
 
   if (seconds < 0) {
@@ -30,7 +30,6 @@ function Timer() {
   }
 
   const styles = {
-    backgroundColor: "rgba(255,255,255,0.7)",
     width,
   };
 
@@ -52,56 +51,53 @@ function Timer() {
     setMinutes(25);
     setBtnText("Start");
     setSeconds("00"); //* Again setting it to string
-  }
+  };
 
-  useEffect(()=>{
-     if(minutes == 0 && seconds == '00'){
+  useEffect(() => {
+    if (minutes == 0 && seconds == "00") {
       console.log("timer over");
-      setTimerOverMessage("Timer is over,is your task completed")
-      setMinutes(25)
-      setSeconds('00')
-      clearInterval(id)
-     }
-  },[minutes,seconds])
+      setTimerOverMessage("Timer is over,is your task completed");
+      setMinutes(25);
+      setSeconds("00");
+      clearInterval(id);
+    }
+  }, [minutes, seconds]);
 
   return (
     <React.Fragment>
-      <main className="parent-container">
-        <div className="container">
-        <div className="timer-component">
-          <div className="timer-container">
-            <div className="timer-bar" style={styles}>
-              {/* {seconds === 0 ? 60 : seconds} */}
-            </div>
+      <div className="timer-parent-component">
+        <div className="timer-container">
+          <div className="timer-bar" style={styles}>
+            {/* {seconds === 0 ? 60 : seconds} */}
           </div>
-          <div className="card">
-      {taskAssignState}  
-      <br />
-      {timerOverMessage}
-            <h1>25 Minutes Timer</h1>
-            <h2>
-              Timer = {minutes} : {seconds}
-            </h2>
-            <div>
-              {!toggleState ? (
-                <button className="btn" onClick={startHandler}>
-                  {btnText}
-                </button>
-              ) : (
-                <button className="btn" onClick={pauseHandler}>
-                  {btnText}
-                </button>
-              )}
-              <button onClick={restartHandler} className="btn">
-                Restart
+        </div>
+        <div className="card">
+          {taskAssignState}
+          <br />
+          {timerOverMessage}
+          <h2>25 Minutes Timer</h2>
+          <h2>
+            Timer = {minutes} : {seconds}
+          </h2>
+          <div>
+            {!toggleState ? (
+              <button className="btn" onClick={startHandler}>
+                {btnText}
               </button>
-            </div>
+            ) : (
+              <button className="btn" onClick={pauseHandler}>
+                {btnText}
+              </button>
+            )}
+            <button onClick={restartHandler} className="btn">
+              Restart
+            </button>
           </div>
         </div>
-        <Create/>
-        <GetAll/>
-        </div>
-      </main>
+        <Create />
+        <GetAll />
+        
+      </div>
     </React.Fragment>
   );
 }

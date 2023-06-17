@@ -22,7 +22,6 @@ const GetSinglePost = () => {
            
         }
         )
-      window.localStorage.setItem("taskArray",JSON.stringify(allData))
         setInput("")
         console.log(allData);
         navigate('/')
