@@ -266,6 +266,9 @@ h1{
   }
 
   @media (min-width : 1024px) {
+    .card{
+      width: 60%;
+    }
     .task-container{
       width: 75%;
     }
@@ -273,7 +276,7 @@ h1{
 
   @media (min-width : 1440px) {
     .card{
-      width: 60%;
+      width: 50%;
     }
 
     .input-container input{
