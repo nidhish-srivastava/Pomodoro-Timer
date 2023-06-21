@@ -12,8 +12,8 @@ function Timer() {
   const [timerOverMessage, setTimerOverMessage] = useState("");
   const [taskAssignState,setTaskAssignState] = useState("")
   const navigate = useNavigate()
-  const [seconds,setSeconds] = useState("05")
-  const [minutes,setMinutes] = useState(0)
+  const [seconds,setSeconds] = useState("00")
+  const [minutes,setMinutes] = useState(25)
   const {allData} = useTimerHook()
 
   const startHandler = () => {
