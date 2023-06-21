@@ -6,4 +6,3 @@ We tend to lose focus while doing our work but by using this technique,we can de
 
 Performs CRUD operations
 
-Data is getting stored in local Storage
