@@ -1,9 +1,11 @@
 import React,{useState,useEffect} from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Break = () => {
   const [minutes,setMinutes] = useState("5")
   const [seconds,setSeconds] = useState("00")
   const [id,setId] = useState(null)
+  const navigate = useNavigate()
 
   if(seconds<0){
        setSeconds(59)
@@ -21,6 +23,7 @@ const Break = () => {
        setMinutes(5)
        setSeconds("00")
        clearInterval(id)
+       navigate('/')
      }
   },[minutes,seconds])
   
