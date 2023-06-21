@@ -324,3 +324,12 @@ h1{
     background-color: lightblue;
     color: black;
   }
+
+  .edit-container{
+    background: linear-gradient(30deg, #151515 10%, #0e1822);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 2rem;
+  }

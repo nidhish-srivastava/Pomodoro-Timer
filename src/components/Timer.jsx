@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from "react";
 import Create from "./Create";
 import GetAll from "./GetAll";
-import { useTimerHook } from "../context";
 import { useNavigate } from "react-router-dom";
+import { useTimerHook } from "../context";
 
 function Timer() {
-  const [seconds, setSeconds] = useState("00"); //* Keeping it a string,otherwise if number then,0
-  const [minutes, setMinutes] = useState(25);
   const [width, setWidth] = useState(null);
   const [toggleState, setToggleState] = useState(false);
   const [id, setId] = useState(null);
   const [btnText, setBtnText] = useState("Start");
-  const { allData } = useTimerHook();
   const [timerOverMessage, setTimerOverMessage] = useState("");
-  const [taskAssignState, setTaskAssignState] = useState("");
+  const [taskAssignState,setTaskAssignState] = useState("")
   const navigate = useNavigate()
+  const [seconds,setSeconds] = useState("05")
+  const [minutes,setMinutes] = useState(0)
+  const {allData} = useTimerHook()
 
   const startHandler = () => {
     const intervalId = setInterval(() => {

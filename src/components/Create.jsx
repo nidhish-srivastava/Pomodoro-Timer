@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
 import { useTimerHook } from "../context";
+import { useState } from "react";
 
 const Create = () => {
   const [task, setTask] = useState("");
@@ -8,7 +8,6 @@ const Create = () => {
 
   const createTaskHandler =  () => {
     if(task.trim()==="") return
-
       const newTask = {
         task : task,
         id : Date.now()

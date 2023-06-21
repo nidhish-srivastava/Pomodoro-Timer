@@ -45,7 +45,7 @@ const GetSinglePost = () => {
   };
 
   return (
-    <React.Fragment>
+    <main className="edit-container">
       <h2 className="edit-label">Edit your Task</h2>
       <div className="single-task-card">
         <input
@@ -60,7 +60,7 @@ const GetSinglePost = () => {
           <i className="fa-solid fa-trash"></i>
         </span>
       </div>
-    </React.Fragment>
+    </main>
   );
 };
 
