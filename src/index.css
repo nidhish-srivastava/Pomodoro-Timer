@@ -20,6 +20,14 @@ body{
   padding: 2rem;
 }
 
+.timer-parent-component-2{
+  background: linear-gradient(to right,rgb(80, 118, 80) , green);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 2rem;
+}
 
 .timer-container {
   border-radius: 10px;

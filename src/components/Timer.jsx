@@ -65,7 +65,7 @@ function Timer() {
 
   return (
     <React.Fragment>
-      <div className="timer-parent-component">
+      <div className={ !toggleState ? "timer-parent-component" : "timer-parent-component-2"}>
         <div className="timer-container">
           <div className="timer-bar" style={styles}>
             {/* {seconds === 0 ? 60 : seconds} */}
