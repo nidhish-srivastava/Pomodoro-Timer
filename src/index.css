@@ -295,3 +295,32 @@ h1{
       width: 60%;
     }
   }
+
+  .break-page{
+    background: linear-gradient(30deg, #151515 10%, #0e1822);
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    color: white;
+  }
+
+
+
+  .main-break-timer{
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background-color: green;
+    display: grid;
+    place-items: center;
+  }
+  .break-timer-container{
+    width: 350px;
+    height: 350px; 
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 3rem;
+    background-color: lightblue;
+    color: black;
+  }

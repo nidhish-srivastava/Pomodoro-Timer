@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Create from "./Create";
 import GetAll from "./GetAll";
 import { useTimerHook } from "../context";
+import { useNavigate } from "react-router-dom";
 
 function Timer() {
   const [seconds, setSeconds] = useState("00"); //* Keeping it a string,otherwise if number then,0
@@ -13,6 +14,7 @@ function Timer() {
   const { allData } = useTimerHook();
   const [timerOverMessage, setTimerOverMessage] = useState("");
   const [taskAssignState, setTaskAssignState] = useState("");
+  const navigate = useNavigate()
 
   const startHandler = () => {
     const intervalId = setInterval(() => {
@@ -60,6 +62,7 @@ function Timer() {
       setMinutes(25);
       setSeconds("00");
       clearInterval(id);
+      navigate('/break')
     }
   }, [minutes, seconds]);
 

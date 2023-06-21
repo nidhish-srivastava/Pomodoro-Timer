@@ -6,6 +6,7 @@ import {
   Route
 } from 'react-router-dom'
 import GetSinglePost from './components/GetSinglePost'
+import Break from './components/Break'
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
     <Routes>
       <Route path='/' element = {<Timer/>} />
       <Route path='/edit' element = {<GetSinglePost/>} />
+      <Route path='/break' element = {<Break/>} />
     </Routes>
     </BrowserRouter>
   )
